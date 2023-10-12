@@ -7,7 +7,7 @@ public class NewTranslator {
     public static void main(String[] args) {
         // TEST
         String[] testTexts = {
-                "Hola mundo",
+                "Hola mundos",
                 "You cannot untie a knot without knowing how it is tied.",
                 "「真の知恵は、自らの無知を認識することにある」。"
         };
