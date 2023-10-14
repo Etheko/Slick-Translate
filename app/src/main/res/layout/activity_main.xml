@@ -8,7 +8,7 @@
     android:background="#FFFFFF"
     android:fitsSystemWindows="true"
     tools:context=".MainActivity">
-
+    
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="0dp"
@@ -20,6 +20,8 @@
         app:layout_constraintTop_toTopOf="@+id/multiText1">
 
     </com.google.android.material.appbar.AppBarLayout>
+
+
 
     <EditText
         android:id="@+id/multiText1"
@@ -47,6 +49,7 @@
         tools:visibility="visible" />
 
     <Button
+        style="@style/Widget.Material3.Button.ElevatedButton"
         android:id="@+id/buttonTrad"
         android:layout_width="262dp"
         android:layout_height="46dp"
@@ -54,7 +57,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
-        android:background="@drawable/buttotranslatebutton_design"
+        android:background="@drawable/ripple_translate_bt"
         android:elevation="14dp"
         app:backgroundTint="@null"
         android:onClick="buttonPressed"
@@ -93,8 +96,9 @@
         android:layout_height="43dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
-        android:background="@null"
+        android:background="@drawable/ripple_bt"
         android:elevation="18dp"
+        android:tooltipText="Copiar texto"
         android:onClick="copyButtonPressed"
         app:layout_constraintBottom_toBottomOf="@+id/multiText2"
         app:layout_constraintEnd_toEndOf="@+id/multiText2"

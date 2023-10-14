@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void buttonPressed(View view){
 
+
+
         multi1 = findViewById(R.id.multiText1);
         multi2 = findViewById(R.id.multiText2);
         String text = multi1.getText().toString();
