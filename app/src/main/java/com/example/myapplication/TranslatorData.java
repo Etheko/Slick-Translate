@@ -1,3 +1,5 @@
+package com.example.myapplication;
+
 public class TranslatorData {
     private final String toLanguage;
     private final String fromLanguage;

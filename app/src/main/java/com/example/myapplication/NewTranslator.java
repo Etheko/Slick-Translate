@@ -1,3 +1,5 @@
+package com.example.myapplication;
+
 import net.suuft.libretranslate.*;
 
 import java.util.ArrayList;

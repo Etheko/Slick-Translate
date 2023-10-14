@@ -1,3 +1,5 @@
+package com.example.myapplication;
+
 import net.suuft.libretranslate.Language;
 import net.suuft.libretranslate.Translator;
 
