@@ -1,10 +1,12 @@
 package com.example.myapplication;
 
+import android.content.ClipboardManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.StrictMode;
@@ -23,6 +25,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import net.suuft.libretranslate.Language;
 
@@ -48,14 +51,32 @@ public class MainActivity extends AppCompatActivity {
 
         multi1 = findViewById(R.id.multiText1);
         multi2 = findViewById(R.id.multiText2);
-
-
         String text = multi1.getText().toString();
 
 
-        Traductor translator = new Traductor(); //creo una clase traductor donde se haga la operacion de traducir para no hacerla aqui
-        String trText = translator.traducir(text);
-        multi2.setText(trText);
+        if(text.isEmpty()){
+            Toast.makeText(this, "No hay texto para traducir", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Traductor translator = new Traductor(); //creo una clase traductor donde se haga la operacion de traducir para no hacerla aqui
+            String trText = translator.traducir(text);
+            multi2.setText(trText);
+        }
+    }
+
+    public void copyButtonPressed(View view){
+
+        multi2 = findViewById(R.id.multiText2);
+
+        String text2 = multi2.getText().toString();
+
+        if (text2.isEmpty()) {
+            Toast.makeText(this, "No hay texto para copiar", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+            clipboard.setText(text2);
+        }
 
     }
 

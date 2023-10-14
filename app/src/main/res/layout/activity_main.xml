@@ -29,21 +29,21 @@
         android:layout_marginTop="109dp"
         android:layout_marginEnd="35dp"
         android:background="@drawable/edittext_design"
+        android:elevation="18dp"
         android:ems="10"
         android:gravity="start|top"
         android:hapticFeedbackEnabled="false"
         android:inputType="textMultiLine"
+        android:padding="20dp"
         android:text="Introduzca texto"
-        android:elevation="18dp"
         android:textColor="#8F6593"
         android:visibility="visible"
-        android:padding="20dp"
         app:guidelineUseRtl="false"
+        app:layout_constraintBottom_toTopOf="@id/multiText2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/multiText2"
         tools:visibility="visible" />
 
     <Button
@@ -86,6 +86,19 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/multiText1" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="43dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@null"
+        android:elevation="18dp"
+        android:onClick="copyButtonPressed"
+        app:layout_constraintBottom_toBottomOf="@+id/multiText2"
+        app:layout_constraintEnd_toEndOf="@+id/multiText2"
+        app:srcCompat="@drawable/baseline_content_copy_24" />
 
     <TextView
         android:id="@+id/titulo"
