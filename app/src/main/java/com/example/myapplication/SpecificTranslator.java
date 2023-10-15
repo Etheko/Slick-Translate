@@ -7,19 +7,19 @@ import java.util.ArrayList;
 
 public class SpecificTranslator {
 
-    private ArrayList<TranslatorData> history;
+    private final ArrayList<TranslatorData> history;
 
-    public SpecificTranslator(){
+    public SpecificTranslator() {
         history = new ArrayList<>();
     }
 
-    public String translate(Language fromLanguage, Language toLanguage, String text){
+    public String translate(Language fromLanguage, Language toLanguage, String text) {
         String translatedText;
         // Check whether to perform or not automatic fromLanguage detection
-        if (fromLanguage.equals(Language.NONE)){
+        if (fromLanguage.equals(Language.NONE)) {
             translatedText = Translator.translate(toLanguage, text);
         } else {
-          translatedText = Translator.translate(fromLanguage, toLanguage, text);
+            translatedText = Translator.translate(fromLanguage, toLanguage, text);
         }
         //Save to history
         TranslatorData translatorData = new TranslatorData(fromLanguage.toString(), toLanguage.toString(), text, translatedText);

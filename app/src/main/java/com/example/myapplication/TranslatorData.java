@@ -6,7 +6,7 @@ public class TranslatorData {
     private final String originalText;
     private final String translatedText;
 
-    public TranslatorData(String fromLanguage, String toLanguage, String originalText, String translatedText){
+    public TranslatorData(String fromLanguage, String toLanguage, String originalText, String translatedText) {
         this.fromLanguage = fromLanguage;
         this.toLanguage = toLanguage;
         this.originalText = originalText;

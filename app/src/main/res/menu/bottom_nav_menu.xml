@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/person"
+        android:title="Traductor"
+        android:icon="@drawable/translate_fill0_wght400_grad0_opsz24"/>
+    <item
+        android:id="@+id/home"
+        android:title="Historial"
+        android:enabled="false"
+        android:icon="@drawable/history_fill0_wght400_grad0_opsz24"/>
+    <item
+        android:id="@+id/settings"
+        android:title="Ajustes"
+        android:enabled="false"
+        android:icon="@drawable/settings_fill0_wght400_grad0_opsz24"/>
+</menu>

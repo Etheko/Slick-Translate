@@ -1,17 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+
     <!-- Base application theme. -->
     <style name="Base.Theme.MyApplication" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="android:navigationBarColor">
-            @android:color/transparent
-        </item>
-
+        <item name="android:navigationBarColor">@android:color/transparent</item>
         <!-- Optional: set to transparent if your app is drawing behind the status bar. -->
-        <item name="android:statusBarColor">
-            @android:color/transparent
-        </item>
-
+        <item name="android:statusBarColor">@android:color/transparent</item>
         <!-- Optional: set for a light status bar with dark content. -->
     </style>
-
     <style name="Theme.MyApplication" parent="Base.Theme.MyApplication" />
 </resources>
