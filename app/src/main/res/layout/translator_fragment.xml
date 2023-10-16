@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.TraductorFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/coordinatorLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true">
+
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                app:layout_constraintBottom_toTopOf="@+id/multiText1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/multiText1"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/titulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="32dp"
+                android:fontFamily="@font/rubik_medium"
+                android:gravity="top"
+                android:text="Traductor"
+                android:textColor="#252627"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/multiText1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.013"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/multiText1"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="109dp"
+                android:layout_marginEnd="35dp"
+                android:background="@drawable/edittext_design"
+                android:elevation="18dp"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hapticFeedbackEnabled="false"
+                android:inputType="textMultiLine"
+                android:padding="20dp"
+                android:hint="Introduzca texto"
+                android:textColor="#8F6593"
+                android:visibility="visible"
+                app:guidelineUseRtl="false"
+                app:layout_constraintBottom_toTopOf="@id/multiText2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible" />
+
+            <EditText
+                android:id="@+id/multiText2"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="35dp"
+                android:layout_marginBottom="100dp"
+                android:background="@drawable/edittext_design"
+                android:elevation="18dp"
+                android:ems="10"
+                android:enabled="false"
+                android:gravity="start|top"
+                android:hint="Texto traducido"
+                android:inputType="textMultiLine"
+                android:padding="20dp"
+                android:textColor="#8F6593"
+                app:layout_constraintBottom_toTopOf="@id/buttonTrad"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/multiText1" />
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/ripple_bt"
+                android:elevation="18dp"
+                android:onClick="copyButtonPressed"
+                android:tooltipText="Copiar texto"
+                app:layout_constraintBottom_toBottomOf="@+id/multiText2"
+                app:layout_constraintEnd_toEndOf="@+id/multiText2"
+                app:srcCompat="@drawable/baseline_content_copy_24" />
+
+
+
+            <Button
+                android:id="@+id/buttonTrad"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="262dp"
+                android:layout_height="46dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/ripple_translate_bt"
+                android:elevation="14dp"
+                android:onClick="buttonPressed"
+                android:text="Traducir"
+                android:textColor="#8f6593"
+                app:backgroundTint="@null"
+                app:layout_constraintBottom_toBottomOf="@id/spinner_origin_lang"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.529"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/spinner_origin_lang" />
+
+            <Spinner
+                android:id="@+id/spinner_origin_lang"
+                android:layout_width="124dp"
+                android:layout_height="45dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginBottom="21dp"
+                android:background="@drawable/edittext_design"
+                app:layout_constraintBottom_toTopOf="@+id/buttonTrad"
+                app:layout_constraintEnd_toStartOf="@+id/spinner_destination_lang"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/multiText2"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Spinner
+                android:id="@+id/spinner_destination_lang"
+                android:layout_width="124dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="21dp"
+                android:background="@drawable/edittext_design"
+                app:layout_constraintBottom_toBottomOf="@+id/buttonTrad"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/multiText2"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

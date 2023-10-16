@@ -48,8 +48,6 @@ public class MainActivity extends AppCompatActivity {
                 R.array.languages_array_destination, android.R.layout.simple_spinner_item);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
         spinnerorigin.setAdapter(adapter);
         spinnerdestination.setAdapter(adapter2);
 
