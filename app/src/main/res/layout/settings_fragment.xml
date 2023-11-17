@@ -2,13 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary"
+    style="@style/BACKGROUND"
     android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#f2ecf6"
+        style="@style/TITLEBAR"
         android:padding="10dp">
 
 
@@ -16,17 +16,17 @@
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_centerInParent="true"
-            android:fontFamily="@font/rubik_medium"
             android:gravity="center"
+            style="@style/APP_TITLE"
             android:text="Ajustes"
-            android:textColor="@color/black"
             android:textSize="18sp" />
 
     </RelativeLayout>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        style="@style/BACKGROUND">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -41,14 +41,12 @@
                 android:src="@drawable/translator_char_icon_no_bg" />
 
             <TextView
+                style="@style/APP_TITLE"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:fontFamily="@font/gabarito_medium"
-                android:text="Slick Translate"
-                android:textColor="@color/black"
-                android:textSize="22sp" />
+                android:text="Slick Translate" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -64,7 +62,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="40dp"
                 android:layout_marginEnd="20dp"
-                android:background="@drawable/settings_option_bg"
+                style="@style/ISLANDS"
                 android:clickable="true"
                 android:onClick="aboutButtonPressed"
                 android:orientation="vertical"
@@ -89,8 +87,8 @@
                         android:layout_marginStart="20dp"
                         android:layout_toEndOf="@id/red_about_icon"
                         android:fontFamily="@font/rubik_medium"
+                        style="@style/TEXTS"
                         android:text="Autores"
-                        android:textColor="@color/black"
                         android:textSize="18sp" />
                 </RelativeLayout>
             </LinearLayout>

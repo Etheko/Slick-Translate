@@ -7,5 +7,58 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
         <!-- Optional: set for a light status bar with dark content. -->
     </style>
+
+    <!-- Modo claro -->
+    <!-- Fondo de la app en modo claro -->
+    <style name="BACKGROUND">
+        <item name="android:colorBackground">@color/white</item>
+    </style>
+
+    <!-- Fondo de la titlebar superior en modo claro -->
+    <style name="TITLEBAR">
+        <item name="android:background">@color/light_grey_3</item>
+    </style>
+
+    <!-- Textos en modo claro -->
+    <style name="TEXTS">
+        <item name="android:textColor">@color/trueblack</item>
+    </style>
+
+    <!-- Texto de titulo de la app -->
+    <style name="APP_TITLE">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/gabarito_medium</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <!-- Islas de opciones en modo claro -->
+    <style name="ISLANDS">
+        <item name="android:background">@drawable/settings_option_bg</item>
+    </style>
+
+    <!-- Botones y normales en modo claro -->
+    <style name="BUTTONS">
+        <item name="android:background">@color/smoke</item>
+        <item name="android:textColor">@color/trueblack</item>
+    </style>
+
+    <!-- Boton de traducir en modo claro -->
+    <style name="TRANSLATE_BUTTON" parent="@style/Widget.Material3.Button.ElevatedButton">
+        <item name="android:background">@drawable/ripple_translate_bt</item>
+        <item name="android:textColor">@color/purple_text_input</item>
+    </style>
+
+    <!-- Cuadros de input de texto en modo claro -->
+    <style name="TRANSLATOR_TEXT_BOXES">
+        <item name="android:background">@drawable/edittext_design</item>
+        <item name="android:textColor">@color/purple_text_input</item>
+    </style>
+
+    <!-- Icon Button Copiar en modo claro -->
+    <style name="COPY_ICON_BUTTON">
+        <item name="android:background">@drawable/ripple_bt</item>
+        <item name="srcCompat">@drawable/baseline_content_copy_24</item>
+    </style>
+
     <style name="Theme.MyApplication" parent="Base.Theme.MyApplication" />
 </resources>

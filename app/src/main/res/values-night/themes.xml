@@ -4,4 +4,56 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
+
+    <!-- Modo oscuro -->
+    <!-- Fondo de la app en modo oscuro -->
+    <style name="BACKGROUND">
+        <item name="android:colorBackground">@color/dark_grey</item>
+    </style>
+
+    <!-- Textos en modo oscuro -->
+    <style name="TEXTS">
+        <item name="android:textColor">@color/light_grey</item>
+    </style>
+
+    <!-- Texto de titulo de la app en modo oscuro-->
+    <style name="APP_TITLE">
+        <item name="android:textColor">@color/light_grey</item>
+        <item name="android:fontFamily">@font/gabarito_medium</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <!-- Fondo de la titlebar superior en modo claro -->
+    <style name="TITLEBAR">
+        <item name="android:background">@color/dark_grey_3</item>
+    </style>
+
+    <!-- Botones normales en modo oscuro -->
+    <style name="BUTTONS">
+        <item name="android:background">@color/dark_grey_2</item>
+        <item name="android:textColor">@color/light_grey</item>
+    </style>
+
+    <!-- Boton de traducir en modo oscuro -->
+    <style name="TRANSLATE_BUTTON" parent="@style/Widget.Material3.Button.ElevatedButton">
+        <item name="android:background">@drawable/ripple_translate_bt_dark</item>
+        <item name="android:textColor">@color/light_grey</item>
+    </style>
+
+    <!-- Cuadros de input de texto en modo oscuro -->
+    <style name="TRANSLATOR_TEXT_BOXES">
+        <item name="android:background">@drawable/edittext_design_dark</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- Islas de opciones en modo claro -->
+    <style name="ISLANDS">
+        <item name="android:background">@drawable/settings_option_bg_dark</item>
+    </style>
+
+    <!-- Icon Button Copiar en modo claro -->
+    <style name="COPY_ICON_BUTTON">
+        <item name="android:background">@drawable/ripple_bt</item>
+        <item name="srcCompat">@drawable/baseline_content_copy_24_dark</item>
+    </style>
 </resources>
