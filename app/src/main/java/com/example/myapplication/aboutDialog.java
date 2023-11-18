@@ -9,12 +9,14 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDialog;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+
 public class aboutDialog extends AppCompatDialogFragment {
 
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this.requireActivity());
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this.requireActivity());
         builder.setTitle("Autores")
                 .setMessage("Aplicación creada por:\n\n" +
                         "- Enrique Tentor\n" +

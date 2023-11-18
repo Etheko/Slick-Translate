@@ -1,6 +1,9 @@
 package com.example.myapplication.fragments;
 
+import static androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode;
+
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,16 +11,29 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 
 import com.example.myapplication.R;
 import com.example.myapplication.aboutDialog;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class SettingsFragment extends Fragment {
+
+    int position = 0;
+
+    public interface SingleChoiceListener {
+        void onPositiveButtonClicked(String[] list, int position);
+
+        void onNegativeButtonClicked();
+    }
+
+    SingleChoiceListener mListener;
 
     public static SettingsFragment newInstance() {
         return new SettingsFragment();
@@ -32,6 +48,8 @@ public class SettingsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         LinearLayout aboutButton = requireView().findViewById(R.id.autoresButton);
         aboutButton.setOnClickListener(this::aboutButtonPressed);
+        LinearLayout darkModeButton = requireView().findViewById(R.id.darkModeOptionButton);
+        darkModeButton.setOnClickListener(this::darkModeButtonPressed);
     }
 
     @Override
@@ -43,7 +61,54 @@ public class SettingsFragment extends Fragment {
         openDialog();
     }
 
-    public void openDialog(){
+    public void darkModeButtonPressed(View view) {
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(requireContext());
+
+        String[] list = getActivity().getResources().getStringArray(R.array.choicesForDarkModeDialog);
+
+        int currentNightMode = getResources().getConfiguration().uiMode & android.content.res.Configuration.UI_MODE_NIGHT_MASK;
+
+        switch (currentNightMode) {
+            case android.content.res.Configuration.UI_MODE_NIGHT_NO:
+                position = 2;
+                break;
+            case android.content.res.Configuration.UI_MODE_NIGHT_YES:
+                position = 1;
+                break;
+            case android.content.res.Configuration.UI_MODE_NIGHT_UNDEFINED:
+                position = 0;
+                break;
+        }
+
+        builder.setTitle("Modo oscuro")
+                .setSingleChoiceItems(list, position, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        position = which;
+                    }
+                })
+                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if (position == 0) {
+                            setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+                        } else if (position == 2) {
+                            setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                        } else if (position == 1) {
+                            setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                        }
+                    }
+                })
+                .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        // Do nothing
+                    }
+                });
+
+        builder.show();
+    }
+
+    public void openDialog() {
         aboutDialog dialog = new aboutDialog();
         dialog.show(this.requireActivity().getSupportFragmentManager(), "aboutDialog");
     }

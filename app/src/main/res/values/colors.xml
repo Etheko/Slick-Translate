@@ -4,6 +4,7 @@
     <color name="trueblack">#000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="transparent">#00000000</color>
+    <color name="purple">#9649cb</color>
     <color name="smoke">#C87A7380</color>
     <color name="primary">#ffffff</color>
     <color name="secondary">#eef0f2</color>
