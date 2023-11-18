@@ -182,7 +182,7 @@
                         android:layout_marginStart="20dp"
                         android:layout_toEndOf="@id/red_mail_icon"
                         android:fontFamily="@font/rubik_medium"
-                        android:text="Contactanos"
+                        android:text="Contáctanos"
                         android:textSize="18sp" />
 
                     <ImageView

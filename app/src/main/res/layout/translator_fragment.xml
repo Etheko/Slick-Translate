@@ -67,7 +67,8 @@
             app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:visibility="visible" />
+            tools:visibility="visible"
+            android:maxLength="2000"/>
 
         <EditText
             android:id="@+id/multiText2"
