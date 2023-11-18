@@ -48,10 +48,28 @@
         <item>AUTO</item>
         <item>SPANISH</item>
         <item>ENGLISH</item>
+        <item>ARABIC</item>
+        <item>CHINESE</item>
+        <item>DANISH</item>
+        <item>DUTCH</item>
+        <item>FRENCH</item>
+        <item>GERMAN</item>
+        <item>ITALIAN</item>
+        <item>JAPANESE</item>
+        <item>RUSSIAN</item>
     </string-array>
     <string-array name="languages_array_destination">
         <item>SPANISH</item>
         <item>ENGLISH</item>
+        <item>ARABIC</item>
+        <item>CHINESE</item>
+        <item>DANISH</item>
+        <item>DUTCH</item>
+        <item>FRENCH</item>
+        <item>GERMAN</item>
+        <item>ITALIAN</item>
+        <item>JAPANESE</item>
+        <item>RUSSIAN</item>
     </string-array>
     
     <string-array name="choicesForDarkModeDialog">
