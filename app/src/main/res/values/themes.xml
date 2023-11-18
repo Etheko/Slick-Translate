@@ -5,6 +5,9 @@
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <!-- Optional: set to transparent if your app is drawing behind the status bar. -->
         <!-- Optional: set for a light status bar with dark content. -->
+        <item name="android:windowLightStatusBar">
+            true
+        </item>
     </style>
 
     <style name="MaterialAlertDialog.Material3.Light" parent="MaterialAlertDialog.Material3">

@@ -10,11 +10,7 @@
         <item name="android:statusBarColor">
             @android:color/transparent
         </item>
-
-        <!-- Optional: set for a light status bar with dark content. -->
-        <item name="android:windowLightStatusBar">
-            true
-        </item>
+        
     </style>
 
     <style name="Base.Theme.MyApplication" parent="Theme.Material3.DayNight.NoActionBar">

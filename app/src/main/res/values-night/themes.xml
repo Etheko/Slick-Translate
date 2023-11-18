@@ -3,6 +3,10 @@
     <style name="Base.Theme.MyApplication" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <item name="colorPrimary">@color/white</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">
+            false
+        </item>
     </style>
 
     <style name="MaterialAlertDialog.Material3.Dark" parent="MaterialAlertDialog.Material3">
