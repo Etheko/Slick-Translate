@@ -20,8 +20,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
-import com.example.myapplication.Traductor;
 
 import java.util.Objects;
 
@@ -105,8 +105,7 @@ public class TraductorFragment extends Fragment {
             Toast.makeText(this.requireActivity(), "No hay texto para traducir", Toast.LENGTH_SHORT).show();
         } else {
             hideSoftKeyboard(this.requireActivity());
-            Traductor translator = new Traductor(); //creo una clase traductor donde se haga la operacion de traducir para no hacerla aqui
-            String trText = translator.traducir(this.idioma_origin, this.idioma_destination, text);
+            String trText = MainActivity.translator.traducir(this.idioma_origin, this.idioma_destination, text);
             multi2.setText(trText);
         }
     }

@@ -2,6 +2,8 @@ package com.example.myapplication;
 
 import net.suuft.libretranslate.Language;
 
+import java.util.ArrayList;
+
 public class Traductor {
 
     SpecificTranslator translator = new SpecificTranslator();
@@ -15,5 +17,9 @@ public class Traductor {
         }
         text = text.toLowerCase(); //para poder traducir si se escriben mayusculas
         return translator.translate(Language.valueOf(idioma_origin), Language.valueOf(idioma_destination), text);
+    }
+
+    public ArrayList<TranslatorData> getHistory() {
+        return translator.getHistory();
     }
 }

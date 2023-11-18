@@ -158,7 +158,6 @@
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="20dp"
                 android:clickable="true"
-                android:onClick="aboutButtonPressed"
                 android:orientation="vertical"
                 android:padding="15dp">
 
