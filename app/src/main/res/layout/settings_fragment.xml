@@ -6,20 +6,24 @@
     android:orientation="vertical">
 
     <RelativeLayout
-        style="@style/TITLEBAR"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp">
+        android:paddingTop="30dp"
+        android:paddingBottom="10dp">
 
 
         <TextView
-            style="@style/APP_TITLE"
+            style="@style/TEXTS"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_centerInParent="true"
+            android:layout_centerInParent="false"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="62dp"
+            android:fontFamily="@font/rubik_medium"
             android:gravity="center"
             android:text="Ajustes"
-            android:textSize="18sp" />
+            android:textSize="24sp" />
 
     </RelativeLayout>
 
@@ -37,7 +41,6 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
                 android:src="@drawable/translator_char_icon_no_bg" />
 
             <TextView
@@ -108,7 +111,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="12dp"
                 android:layout_marginEnd="20dp"
                 android:clickable="true"
                 android:onClick="aboutButtonPressed"
