@@ -6,9 +6,12 @@
     <color name="transparent">#00000000</color>
     <color name="purple">#9649cb</color>
     <color name="smoke">#C87A7380</color>
+    <color name="less_smoke">#C8AFAAB3</color>
     <color name="primary">#ffffff</color>
     <color name="secondary">#eef0f2</color>
     <color name="accent">#ff3562</color>
+    <color name="accent_lighter">#C4EA756C</color>
+    <color name="accent_darker">#ed756d</color>
     <color name="dark_grey">#252627</color>
     <color name="light_grey">#d3d4d9</color>
     <color name="light_grey_2">#eff0f3</color>

@@ -1,31 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/BACKGROUND"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    style="@style/BACKGROUND"
     android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/TITLEBAR"
-        android:padding="10dp">
+        android:paddingTop="30dp"
+        android:paddingBottom="10dp">
 
         <TextView
+            style="@style/TEXTS"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_centerInParent="true"
+            android:layout_centerInParent="false"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="62dp"
+            android:fontFamily="@font/rubik_medium"
             android:gravity="center"
-            style="@style/APP_TITLE"
             android:text="Historial"
-            android:textSize="18sp" />
+            android:textSize="24sp" />
 
     </RelativeLayout>
 
-    <ListView
-        android:id="@+id/HistorialList"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </ListView>
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        style="@style/STROKE">
+
+        <ListView
+            android:id="@+id/HistorialList"
+            style="@style/NO_RIPPLE_ISLANDS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:listSelector="@drawable/ripple_bt_history" />
+
+    </FrameLayout>
 
 </LinearLayout>

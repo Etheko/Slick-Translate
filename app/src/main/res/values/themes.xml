@@ -33,6 +33,11 @@
         <item name="android:textColor">@color/trueblack</item>
     </style>
 
+    <!-- Subtextos en modo claro -->
+    <style name="SUBTEXTS">
+        <item name="android:textColor">@color/smoke</item>
+    </style>
+
     <!-- Texto de titulo de la app -->
     <style name="APP_TITLE">
         <item name="android:textColor">@color/black</item>
@@ -40,9 +45,22 @@
         <item name="android:textSize">22sp</item>
     </style>
 
+    <style name="ACTIVE_NAVBAR_ITEM" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/accent_darker</item>
+    </style>
+
     <!-- Islas de opciones en modo claro -->
     <style name="ISLANDS">
         <item name="android:background">@drawable/settings_option_bg</item>
+    </style>
+
+    <!-- Islas de opciones en modo claro (sin ripple) -->
+    <style name="NO_RIPPLE_ISLANDS">
+        <item name="android:background">@drawable/settings_option_bg_no_ripple</item>
+    </style>
+
+    <style name="STROKE">
+        <item name="android:foreground">@drawable/inverted_corners</item>
     </style>
 
     <!-- Botones y normales en modo claro -->

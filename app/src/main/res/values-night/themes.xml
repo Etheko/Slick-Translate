@@ -27,11 +27,20 @@
         <item name="android:textColor">@color/light_grey</item>
     </style>
 
+    <!-- Subtextos en modo oscuro -->
+    <style name="SUBTEXTS">
+        <item name="android:textColor">@color/less_smoke</item>
+    </style>
+
     <!-- Texto de titulo de la app en modo oscuro-->
     <style name="APP_TITLE">
         <item name="android:textColor">@color/light_grey</item>
         <item name="android:fontFamily">@font/gabarito_medium</item>
         <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="ACTIVE_NAVBAR_ITEM" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/accent_lighter</item>
     </style>
 
     <!-- Fondo de la titlebar superior en modo claro -->
@@ -51,6 +60,10 @@
         <item name="android:textColor">@color/light_grey</item>
     </style>
 
+    <style name="STROKE">
+        <item name="android:foreground">@drawable/inverted_corners_dark</item>
+    </style>
+
     <!-- Cuadros de input de texto en modo oscuro -->
     <style name="TRANSLATOR_TEXT_BOXES">
         <item name="android:background">@drawable/edittext_design_dark</item>
@@ -60,6 +73,11 @@
     <!-- Islas de opciones en modo claro -->
     <style name="ISLANDS">
         <item name="android:background">@drawable/settings_option_bg_dark</item>
+    </style>
+
+    <!-- Islas de opciones en modo claro (sin ripple) -->
+    <style name="NO_RIPPLE_ISLANDS">
+        <item name="android:background">@drawable/settings_option_bg_dark_no_ripple</item>
     </style>
 
     <!-- Icon Button Copiar en modo claro -->

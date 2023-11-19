@@ -8,35 +8,35 @@
 
     <TextView
         android:id="@+id/TextoTraduccion"
+        style="@style/TEXTS"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginStart="2.5dp"
         android:gravity="center_vertical"
         android:padding="2.5dp"
-        android:text=""
-        android:textColor="#000000" />
+        android:text="" />
 
     <TextView
         android:id="@+id/Traduccion"
+        style="@style/TEXTS"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/TextoTraduccion"
         android:layout_marginStart="2.5dp"
         android:gravity="center_vertical"
         android:padding="2.5dp"
-        android:text=""
-        android:textColor="#000000" />
+        android:text="" />
 
     <TextView
         android:id="@+id/Idiomas"
+        style="@style/SUBTEXTS"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/Traduccion"
         android:layout_marginStart="2.5dp"
         android:gravity="center_vertical"
         android:padding="2.5dp"
-        android:text=""
-        android:textColor="#80000000" />
+        android:text="" />
 
 </RelativeLayout>

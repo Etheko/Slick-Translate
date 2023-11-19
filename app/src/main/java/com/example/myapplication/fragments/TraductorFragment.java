@@ -49,6 +49,7 @@ public class TraductorFragment extends Fragment {
         super.onDestroyView();
     }
 
+
     public void setupView() {
         Spinner spinner_origin = requireView().findViewById(R.id.spinner_origin_lang);
         Spinner spinner_destination = requireView().findViewById(R.id.spinner_destination_lang);
