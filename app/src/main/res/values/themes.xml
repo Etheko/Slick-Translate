@@ -81,6 +81,17 @@
         <item name="android:textColor">@color/purple_text_input</item>
     </style>
 
+    <!-- Cuadros de input de texto en modo claro -->
+    <style name="TRANSLATOR_INPUT_LANG_BUTTON">
+        <item name="android:background">@drawable/input_lang_button_light</item>
+        <item name="android:textColor">@color/purple_text_input</item>
+    </style>
+
+    <style name="TRANSLATOR_OUTPUT_LANG_BUTTON">
+        <item name="android:background">@drawable/output_lang_button_light</item>
+        <item name="android:textColor">@color/purple_text_input</item>
+    </style>
+
     <!-- Icon Button Copiar en modo claro -->
     <style name="COPY_ICON_BUTTON">
         <item name="android:background">@drawable/ripple_bt</item>

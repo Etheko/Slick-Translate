@@ -43,6 +43,17 @@
         <item name="android:color">@color/accent_lighter</item>
     </style>
 
+    <!-- Cuadros de input de texto en modo claro -->
+    <style name="TRANSLATOR_INPUT_LANG_BUTTON">
+        <item name="android:background">@drawable/input_lang_button_dark</item>
+        <item name="android:textColor">@color/purple_text_input</item>
+    </style>
+
+    <style name="TRANSLATOR_OUTPUT_LANG_BUTTON">
+        <item name="android:background">@drawable/output_lang_button_dark</item>
+        <item name="android:textColor">@color/purple_text_input</item>
+    </style>
+
     <!-- Fondo de la titlebar superior en modo claro -->
     <style name="TITLEBAR">
         <item name="android:background">@color/dark_grey_3</item>
