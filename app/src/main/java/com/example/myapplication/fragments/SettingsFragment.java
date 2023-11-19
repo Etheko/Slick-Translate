@@ -5,6 +5,8 @@ import static androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -26,7 +29,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 public class SettingsFragment extends Fragment {
 
     int position = 0;
-
+    private String[] DireccionPre = {"a.velascom.2021@alumnos.urjc.es","a.roldan.2021@alumnos.urjc.es","p.torrecilla.2021@alumnos.urjc.es","e.tentor.2021@alumnos.urjc.es","ca.vlad.2021@alumnos.urjc.es","i.ruizba.2021@alumnos.urjc.es"};
     public interface SingleChoiceListener {
         void onPositiveButtonClicked(String[] list, int position);
 
@@ -50,8 +53,19 @@ public class SettingsFragment extends Fragment {
         aboutButton.setOnClickListener(this::aboutButtonPressed);
         LinearLayout darkModeButton = requireView().findViewById(R.id.darkModeOptionButton);
         darkModeButton.setOnClickListener(this::darkModeButtonPressed);
+        LinearLayout emailAdress = requireView().findViewById(R.id.mailButton);
+        emailAdress.setOnClickListener(this::ClickAndSendEmail);
     }
+    public void ClickAndSendEmail(View v){
+        sendEmail(DireccionPre);
+    }
+    public void sendEmail(String[] Direccion){
+        Intent Email = new Intent(Intent.ACTION_SENDTO);
+        Email.setData(Uri.parse("mailto:"));
+        Email.putExtra(Intent.EXTRA_EMAIL,Direccion);
+        startActivity(Email);
 
+    }
     @Override
     public void onDestroyView() {
         super.onDestroyView();
@@ -111,6 +125,10 @@ public class SettingsFragment extends Fragment {
     public void openDialog() {
         aboutDialog dialog = new aboutDialog();
         dialog.show(this.requireActivity().getSupportFragmentManager(), "aboutDialog");
+    }
+
+    public void contactDialog() {
+
     }
 
 }
