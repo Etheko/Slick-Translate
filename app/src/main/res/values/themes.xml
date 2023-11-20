@@ -85,11 +85,13 @@
     <style name="TRANSLATOR_INPUT_LANG_BUTTON">
         <item name="android:background">@drawable/input_lang_button_light</item>
         <item name="android:textColor">@color/purple_text_input</item>
+        <item name="android:popupBackground">@drawable/spinner_light_bg</item>
     </style>
 
     <style name="TRANSLATOR_OUTPUT_LANG_BUTTON">
         <item name="android:background">@drawable/output_lang_button_light</item>
         <item name="android:textColor">@color/purple_text_input</item>
+        <item name="android:popupBackground">@drawable/spinner_light_bg</item>
     </style>
 
     <!-- Icon Button Copiar en modo claro -->
