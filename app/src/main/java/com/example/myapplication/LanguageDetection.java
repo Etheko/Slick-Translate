@@ -24,7 +24,7 @@ public class LanguageDetection {
         return detectedLang.toString();
     }
 
-    public Language[] getLanguages() {
+    public Language[] getLanguages(){
         return languages;
     }
 }

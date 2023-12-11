@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.autofill.AutofillValue;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,6 +21,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.example.myapplication.LanguageDetection;
 import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
 
@@ -106,6 +108,18 @@ public class TraductorFragment extends Fragment {
             Toast.makeText(this.requireActivity(), "No hay texto para traducir", Toast.LENGTH_SHORT).show();
         } else {
             hideSoftKeyboard(this.requireActivity());
+            if (this.idioma_origin.equals("AUTO")){
+                LanguageDetection languageDetection = new LanguageDetection();
+                this.idioma_origin = languageDetection.detect(text);
+                // Cambiar valor de spinner origin lang
+
+                Spinner spinner_origin = requireView().findViewById(R.id.spinner_origin_lang);
+                for (int i = 0; i < 11; i++) {
+                    if (spinner_origin.getItemAtPosition(i).equals(this.idioma_origin)) {
+                        spinner_origin.setSelection(i);
+                    }
+                }
+            }
             String trText = MainActivity.translator.traducir(this.idioma_origin, this.idioma_destination, text);
             multi2.setText(trText);
         }
