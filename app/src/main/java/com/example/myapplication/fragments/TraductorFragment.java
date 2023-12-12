@@ -5,6 +5,8 @@ import static android.content.Context.CLIPBOARD_SERVICE;
 import android.app.Activity;
 import android.content.ClipboardManager;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +18,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -31,6 +34,8 @@ public class TraductorFragment extends Fragment {
 
     private EditText multi2;
     private String idioma_origin, idioma_destination;
+
+    private TextView charCounter;
 
     public static TraductorFragment newInstance() {
         return new TraductorFragment();
@@ -55,6 +60,9 @@ public class TraductorFragment extends Fragment {
     public void setupView() {
         Spinner spinner_origin = requireView().findViewById(R.id.spinner_origin_lang);
         Spinner spinner_destination = requireView().findViewById(R.id.spinner_destination_lang);
+
+        // Asignar variable al contador de caracteres
+        charCounter = requireView().findViewById(R.id.charCounter);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this.requireActivity(), R.array.languages_array_origin, android.R.layout.simple_dropdown_item_1line);
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this.requireActivity(), R.array.languages_array_destination, android.R.layout.simple_dropdown_item_1line);
@@ -89,6 +97,41 @@ public class TraductorFragment extends Fragment {
             @Override
             public void onNothingSelected(AdapterView<?> parentView) {
                 // Manejar la ausencia de selección si es necesario
+            }
+        });
+
+        // Listener para el contador de caracteres sobre el cuadro de texto de origen
+        EditText multi1 = requireView().findViewById(R.id.multiText1);
+
+        multi1.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // COntar cuantos caracteres hay en el cuadro de texto
+                int charCount = multi1.length();
+
+                // Convertir el contador a String
+                String charCountString = String.valueOf(charCount);
+
+                // Mostrar el contador en el TextView
+                charCounter.setText(charCountString + "/2000");
+
+                // Si el contador supera los 1500 caracteres, cambiar el color del contador a rojo
+                if (charCount > 1500) {
+                    charCounter.setTextColor(getResources().getColor(R.color.accent));
+                } else {
+                    charCounter.setTextColor(getResources().getColor(R.color.less_smoke));
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
             }
         });
 

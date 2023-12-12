@@ -61,7 +61,10 @@
             android:hint="Introduzca texto"
             android:inputType="textMultiLine"
             android:maxLength="2000"
-            android:padding="20dp"
+            android:paddingBottom="30dp"
+            android:paddingTop="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
             android:visibility="visible"
             app:guidelineUseRtl="false"
             app:layout_constraintBottom_toTopOf="@id/multiText2"
@@ -70,6 +73,22 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:visibility="visible" />
+
+        <TextView
+            android:elevation="19dp"
+            android:id="@+id/charCounter"
+            style="@style/SUBTEXTS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/rubik_medium"
+            android:textColor="@color/less_smoke"
+            android:text="0/2000"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/multiText1"
+            app:layout_constraintEnd_toEndOf="@+id/multiText1" />
 
         <EditText
             android:id="@+id/multiText2"
@@ -85,11 +104,15 @@
             android:gravity="start|top"
             android:hint="Texto traducido"
             android:inputType="textMultiLine"
-            android:padding="20dp"
+            android:paddingBottom="50dp"
+            android:paddingTop="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/multiText1" />
+            app:layout_constraintTop_toBottomOf="@+id/multiText1"
+            android:autofillHints="" />
 
         <ImageButton
             android:id="@+id/imageButton"
