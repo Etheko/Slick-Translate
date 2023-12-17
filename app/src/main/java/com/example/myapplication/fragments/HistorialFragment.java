@@ -1,12 +1,10 @@
 package com.example.myapplication.fragments;
 
-import android.bluetooth.BluetoothManager;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -24,7 +22,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class HistorialFragment extends Fragment implements HistorialAdapter.OnItemDeleteListener{
+public class HistorialFragment extends Fragment implements HistorialAdapter.OnItemDeleteListener, HistorialAdapter.OnItemCopyListener{
 
     public static HistorialFragment newInstance() {
         return new HistorialFragment();
@@ -64,18 +62,9 @@ public class HistorialFragment extends Fragment implements HistorialAdapter.OnIt
 
         HistorialAdapter wordsAdapter = new HistorialAdapter(this.requireActivity(), 0, Ejemplo);
         wordsAdapter.setOnItemDeleteListener(this);
+        wordsAdapter.setOnItemCopyListener(this);
         List.setAdapter(wordsAdapter);
 
-        // Listener para el click en un elemento de la lista
-        List.setOnItemClickListener((parent, view1, position, id) -> {
-            TranslatorData current = Ejemplo.get(position);
-
-            // Copiar en el portapapeles el texto traducido
-            android.content.ClipboardManager clipboard = (android.content.ClipboardManager) requireActivity().getSystemService(android.content.Context.CLIPBOARD_SERVICE);
-            android.content.ClipData clip = android.content.ClipData.newPlainText("Copied Text", current.getTranslatedText());
-            clipboard.setPrimaryClip(clip);
-            Toast.makeText(requireActivity(), "Texto copiado al portapapeles", Toast.LENGTH_SHORT).show();
-        });
 
     }
 
@@ -110,6 +99,26 @@ public class HistorialFragment extends Fragment implements HistorialAdapter.OnIt
     @Override
     public void onItemDelete(int position) {
         eliminarElementoDelHistorial(position, requireView());
+    }
+
+    @Override
+    public void onItemCopy(int position) {
+        copiarElementoDelHistorial(position, requireView());
+    }
+
+    // Método para copiar el texto de la lista del historial al portapapeles
+    public void copiarElementoDelHistorial(int position,@NonNull View view) {
+        ArrayList<TranslatorData> historial = MainActivity.translator.getHistory();
+
+        // Copia la traducción al portapapeles
+        TranslatorData current = historial.get(position);
+        String translatedText = current.getTranslatedText();
+        android.content.ClipboardManager clipboard = (android.content.ClipboardManager) requireActivity().getSystemService(android.content.Context.CLIPBOARD_SERVICE);
+        android.content.ClipData clip = android.content.ClipData.newPlainText("Copied Text", translatedText);
+        clipboard.setPrimaryClip(clip);
+
+        // Puedes mostrar un mensaje o realizar otras acciones si es necesario
+        Toast.makeText(requireActivity(), "Traducción copiada al portapapeles", Toast.LENGTH_SHORT).show();
     }
 
     public void eliminarElementoDelHistorial(int position,@NonNull View view) {

@@ -21,9 +21,20 @@ public class HistorialAdapter extends ArrayAdapter<TranslatorData> {
 
     public interface OnItemDeleteListener {
         void onItemDelete(int position);
+
+    }
+
+    public interface OnItemCopyListener {
+        void onItemCopy(int position);
     }
 
     private OnItemDeleteListener onItemDeleteListener;
+
+    private OnItemCopyListener onItemCopyListener;
+
+    public void setOnItemCopyListener(OnItemCopyListener listener) {
+        this.onItemCopyListener = listener;
+    }
 
     public void setOnItemDeleteListener(OnItemDeleteListener listener) {
         this.onItemDeleteListener = listener;
@@ -62,6 +73,13 @@ public class HistorialAdapter extends ArrayAdapter<TranslatorData> {
         Eliminar.setOnClickListener(v -> {
             if (onItemDeleteListener != null) {
                 onItemDeleteListener.onItemDelete(position);
+            }
+        });
+
+        ImageButton Copiar = list_item.findViewById(R.id.btnCopy);
+        Copiar.setOnClickListener(v -> {
+            if (onItemCopyListener != null) {
+                onItemCopyListener.onItemCopy(position);
             }
         });
 

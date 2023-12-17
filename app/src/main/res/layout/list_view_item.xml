@@ -52,4 +52,17 @@
         android:padding="5dp"
         style="@style/DELETE_ICON_BUTTON"/>
 
+    <!-- Boton para copiar un elemento de la lista (aparece a la derecha de cada elemento) -->
+    <ImageButton
+        android:id="@+id/btnCopy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@id/btnDelete"
+        android:layout_centerVertical="true"
+        android:tooltipText="Copiar traducción"
+        android:background="@drawable/ripple_bt"
+        android:padding="5dp"
+        style="@style/COPY_ICON_BUTTON"/>
+
+
 </RelativeLayout>
