@@ -1,5 +1,6 @@
 package com.example.myapplication.fragments;
 
+import android.bluetooth.BluetoothManager;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.LayoutInflater;
@@ -23,7 +24,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class HistorialFragment extends Fragment {
+public class HistorialFragment extends Fragment implements HistorialAdapter.OnItemDeleteListener{
 
     public static HistorialFragment newInstance() {
         return new HistorialFragment();
@@ -60,6 +61,7 @@ public class HistorialFragment extends Fragment {
 
 
         HistorialAdapter wordsAdapter = new HistorialAdapter(this.requireActivity(), 0, Ejemplo);
+        wordsAdapter.setOnItemDeleteListener(this);
         List.setAdapter(wordsAdapter);
 
         // Listener para el click en un elemento de la lista
@@ -104,6 +106,38 @@ public class HistorialFragment extends Fragment {
             }
         }
 
+    }
+
+    @Override
+    public void onItemDelete(int position) {
+        eliminarElementoDelHistorial(position, requireView());
+    }
+
+    public void eliminarElementoDelHistorial(int position,@NonNull View view) {
+        ArrayList<TranslatorData> historial = MainActivity.translator.getHistory();
+
+        // Elimina el elemento del historial
+        historial.remove(position);
+
+        // Notifica al adaptador que los datos han cambiado
+        HistorialAdapter adapter = (HistorialAdapter) ((ListView) view.findViewById(R.id.HistorialList)).getAdapter();
+        if (adapter != null) {
+            adapter.notifyDataSetChanged();
+        }
+
+        // Actualiza la visibilidad del botón de descarga
+        actualizarVisibilidadBotonDescarga(view);
+
+        // Puedes mostrar un mensaje o realizar otras acciones si es necesario
+        Toast.makeText(requireActivity(), "Elemento eliminado del historial", Toast.LENGTH_SHORT).show();
+    }
+
+    private void actualizarVisibilidadBotonDescarga(@NonNull View view) {
+        if (MainActivity.translator.getHistory().isEmpty()) {
+            view.findViewById(R.id.downloadHistory).setVisibility(View.GONE);
+        } else {
+            view.findViewById(R.id.downloadHistory).setVisibility(View.VISIBLE);
+        }
     }
 
     @Override

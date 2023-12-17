@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,6 +17,16 @@ public class HistorialAdapter extends ArrayAdapter<TranslatorData> {
 
     public HistorialAdapter(@NonNull Context context, int resource, ArrayList<TranslatorData> words) {
         super(context, resource, words);
+    }
+
+    public interface OnItemDeleteListener {
+        void onItemDelete(int position);
+    }
+
+    private OnItemDeleteListener onItemDeleteListener;
+
+    public void setOnItemDeleteListener(OnItemDeleteListener listener) {
+        this.onItemDeleteListener = listener;
     }
 
     @NonNull
@@ -46,6 +57,14 @@ public class HistorialAdapter extends ArrayAdapter<TranslatorData> {
         }
 
         list_item.setPadding(15, 15, 15, 15);
+
+        ImageButton Eliminar = list_item.findViewById(R.id.btnDelete);
+        Eliminar.setOnClickListener(v -> {
+            if (onItemDeleteListener != null) {
+                onItemDeleteListener.onItemDelete(position);
+            }
+        });
+
 
         return list_item;
     }
