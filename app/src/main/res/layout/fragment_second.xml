@@ -33,10 +33,24 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp">
 
+        <!-- Texto a mostrar cuando no hay historial (se muestra centrado en la pantalla con respecto al FrameLayout padre-->
+        <TextView
+            android:id="@+id/emptyHistory"
+            style="@style/TEXTS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/rubik"
+            android:gravity="center"
+            android:text="No hay elementos en el historial"
+            android:textSize="18sp"
+            android:visibility="gone" />
+
         <FrameLayout
             style="@style/STROKE"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp">
 
             <ListView
                 android:id="@+id/HistorialList"
@@ -52,9 +66,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
+            android:tooltipText="Descargar historial"
             android:layout_margin="16dp"
             android:src="@drawable/baseline_download_24"
-            android:tint="@color/white" />
+            android:tint="@color/white"
+            style="@style/FLOATING_DN_BUTTON"/>
 
     </FrameLayout>
 

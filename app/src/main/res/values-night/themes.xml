@@ -93,9 +93,20 @@
         <item name="android:background">@drawable/settings_option_bg_dark_no_ripple</item>
     </style>
 
-    <!-- Icon Button Copiar en modo claro -->
+    <!-- Icon Button Copiar en modo oscuro -->
     <style name="COPY_ICON_BUTTON">
         <item name="android:background">@drawable/ripple_bt</item>
         <item name="srcCompat">@drawable/baseline_content_copy_24_dark</item>
     </style>
+
+    <!-- Icon Button Borrar en modo oscuro -->
+    <style name="DELETE_ICON_BUTTON">
+        <item name="android:background">@drawable/ripple_bt</item>
+        <item name="srcCompat">@drawable/baseline_delete_outline_24_dark</item>
+    </style>
+
+    <style name="FLOATING_DN_BUTTON">
+        <item name="android:backgroundTint">#674c69</item>
+    </style>
+
 </resources>

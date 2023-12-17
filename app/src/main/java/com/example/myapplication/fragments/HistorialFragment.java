@@ -50,13 +50,15 @@ public class HistorialFragment extends Fragment implements HistorialAdapter.OnIt
             }
         });
 
-        // Ocultar el botón de descarga si no hay historial
+        // Ocultar el botón de descarga si no hay historial y mostrar el texto de que no hay historial
         if (Ejemplo.isEmpty()) {
             view.findViewById(R.id.downloadHistory).setVisibility(View.GONE);
+            view.findViewById(R.id.emptyHistory).setVisibility(View.VISIBLE);
         }
-        // Mostrar el botón de descarga si hay historial
+        // Mostrar el botón de descarga si hay historial y ocultar el texto de que no hay historial
         else {
             view.findViewById(R.id.downloadHistory).setVisibility(View.VISIBLE);
+            view.findViewById(R.id.emptyHistory).setVisibility(View.GONE);
         }
 
 
@@ -74,9 +76,6 @@ public class HistorialFragment extends Fragment implements HistorialAdapter.OnIt
             clipboard.setPrimaryClip(clip);
             Toast.makeText(requireActivity(), "Texto copiado al portapapeles", Toast.LENGTH_SHORT).show();
         });
-
-        // Listener para el scroll en la lista (ocultar el botón de descarga y mostrarlo al parar de hacer scroll)
-
 
     }
 
@@ -135,8 +134,10 @@ public class HistorialFragment extends Fragment implements HistorialAdapter.OnIt
     private void actualizarVisibilidadBotonDescarga(@NonNull View view) {
         if (MainActivity.translator.getHistory().isEmpty()) {
             view.findViewById(R.id.downloadHistory).setVisibility(View.GONE);
+            view.findViewById(R.id.emptyHistory).setVisibility(View.VISIBLE);
         } else {
             view.findViewById(R.id.downloadHistory).setVisibility(View.VISIBLE);
+            view.findViewById(R.id.emptyHistory).setVisibility(View.GONE);
         }
     }
 

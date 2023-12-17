@@ -100,5 +100,15 @@
         <item name="srcCompat">@drawable/baseline_content_copy_24</item>
     </style>
 
+    <!-- Icon Button Borrar en modo claro -->
+    <style name="DELETE_ICON_BUTTON">
+        <item name="android:background">@drawable/ripple_bt</item>
+        <item name="srcCompat">@drawable/baseline_delete_outline_24</item>
+    </style>
+
+    <style name="FLOATING_DN_BUTTON">
+        <item name="android:backgroundTint">#f2d6f4</item>
+    </style>
+
     <style name="Theme.MyApplication" parent="Base.Theme.MyApplication" />
 </resources>

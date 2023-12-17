@@ -28,7 +28,7 @@ public class HistorialAdapter extends ArrayAdapter<TranslatorData> {
     public void setOnItemDeleteListener(OnItemDeleteListener listener) {
         this.onItemDeleteListener = listener;
     }
-
+    
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {

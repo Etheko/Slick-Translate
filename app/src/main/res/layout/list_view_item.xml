@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/MainContainer"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -38,12 +39,17 @@
         android:gravity="center_vertical"
         android:padding="2.5dp"
         android:text="" />
+
+    <!-- Boton para eliminar un elemento de la lista (aparece a la derecha de cada elemento) -->
     <ImageButton
         android:id="@+id/btnDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:layout_margin="10dp"
-        android:src="@drawable/baseline_download_24"/>
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:tooltipText="Borrar elemento"
+        android:background="@drawable/ripple_bt"
+        android:padding="5dp"
+        style="@style/DELETE_ICON_BUTTON"/>
 
 </RelativeLayout>
